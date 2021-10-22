@@ -1,0 +1,1255 @@
+/* ---------- root variables ---------- */
+:root {
+  --light-green: rgb(172, 198, 201);
+}
+
+/* ------------ HEADER ------------ */
+.logo {
+  width: 50px;
+  margin-top: 20px;
+  float: left;
+  position: absolute;
+}
+
+/* ---------- general styling ---------- */
+html,
+body {
+  text-align: center;
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Serif", serif;
+  background-color: white;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: block;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 110px);
+  background: var(--light-grey);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 55px 0;
+}
+
+/* ---------- header styling ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 1em 0;
+  height: 3em;
+  background-color: white;
+}
+
+/* header content width*/
+.tabbar {
+  width: 80%;
+  margin: 0 auto;
+
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -40px;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+.mobileiconlabel {
+  right: 0;
+  position: absolute;
+  display: inline-block;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  padding: 10px 5px;
+}
+
+.menuitem {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.active_menuitem {
+  border-radius: 5px;
+  border: solid 2px lightgray;
+}
+
+.cta_style {
+  background-color: white;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Hide checkbox and menuitems until clicked */
+.menuitems__container, .mobileicon {
+  display: none;
+}
+
+/* Show menuitems when mobileicon-label is clicked */
+.mobileicon:checked ~ .menuitems__container {
+  display: flex;
+}
+
+.menuitems__container {
+  margin-left: -12.5%;
+  margin-right: -12.5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 3em;
+  padding-top: 1em;
+  flex-direction: column;
+  background-color: white;
+}
+
+
+/* --------- Billede og tekst på forsiden --------*/
+.forside_billede {
+  width: 25%;
+  float: left;
+  margin-left: 10px;
+  margin-top: -49px;
+}
+
+.forside_tekst {
+  margin-top: 10px;
+  padding: 15px;
+  margin-left: 300px;
+}
+
+.tekst_billede {
+  margin-top: 140px;
+  padding: 30px;
+  width: 90%;
+  margin-left: 30px;
+  background-color: #DDD2BF;
+}
+
+.button_læsmere {
+  padding: 8px;
+  font-family: "PT Serif", serif;
+  border: 4px;
+  border: 1px solid white;
+  margin-right: 30px;
+  color: #9e866c;
+  margin-bottom: 10px;
+}
+
+/* --------- Billeder på forsiden -------- */
+.laptop {
+  margin-bottom: 30px;
+  margin-left: 10px;
+  width: 80%;
+}
+
+.image_forside {
+  margin-top: 70px;
+}
+
+.mobile {
+  display: none;
+}
+
+/* ----- Parallax -------- */
+.parallax {
+  background: url(../img/parallax.png);
+  background-attachment: fixed;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 60px;
+  margin-bottom: -30px;
+}
+
+/* ----- Overskrift portfolio ------ */
+
+.overskrift_portfolio {
+  margin-top: 90px;
+}
+
+/* Gridbox Portfolio */
+.image_portfolio {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+  margin-top: 100px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  margin-left: 100px;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.5;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #9e866c;
+  color: white;
+  font-size: 16px;
+  padding: 15px 5px;
+  margin-left: 160px;
+  margin-right: 30px;
+}
+
+.billeder_bike {
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.image_bike {
+  margin-right: 40px;
+  width: 150px;
+}
+
+.tekst_bike {
+  background-color: antiquewhite;
+  padding: 20px;
+  float: right;
+  margin-top: -240px;
+  margin-left: 700px;
+  margin-right: -500px;
+}
+
+/*------ Billeder af projekter --------*/
+.image_1 {
+  margin-top: 20px;
+  opacity: 1;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  width: 450px;
+}
+
+.image_2 {
+  width: 450px;
+}
+
+.image_3 {
+  width: 450px;
+}
+
+.image_4 {
+  width: 450px;
+}
+
+.image_1:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_2 {
+  height: 203px;
+}
+
+.image_2:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_3:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_4:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/* ------ Mellemled Portfolio -----*/
+
+.mellemled_portfolio {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* -------- CLC ----- */ 
+.tekst_clc {
+  float: right;
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-top: -250px;
+  margin-left: 700px;
+  margin-right: -500px;
+  color: black;
+}
+
+.overskrift_clc {
+  color: black;
+}
+
+.billeder_clc {
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.image__3 {
+  height: 250px;
+}
+
+.image__1:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image__2:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image__3:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image__4:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_clc {
+  margin-right: 10px;
+  margin-left: -5px;
+}
+
+.image_clc1 {
+  width: 400px;
+}
+
+.image_clc2 {
+  width: 300px;
+}
+
+.image_clc3 {
+  width: 400px;
+}
+
+.image__1 {
+  width: 450px;
+}
+
+.image__2 {
+  width: 450px;
+}
+
+.image__3 {
+  width: 450px;
+}
+
+.image__4 {
+  width: 450px;
+}
+
+
+/* ------ Løgismose ------ */
+
+.tekst_chips {
+  float: right;
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-top: -250px;
+  margin-left: 700px;
+  margin-right: -500px;
+  color: black;
+}
+
+.billeder_chips {
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.image_chips {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+/*------- Tekstbokse Portfolio -------*/
+
+.outer_flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  margin-top: 50px;
+}
+
+.flexbox_heading {
+  text-align: center;
+  color: #333333;
+  font-family: "PT Serif", serif;
+  font-size: 1.5rem;
+  line-height: 1.85rem;
+}
+
+.section_text {
+  color: #333333;
+  font-family: "PT Serif", serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: -10px;
+}
+
+.flexbox {
+  border: 2.5px solid #c6bda8;
+  margin: 5px;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 0.5s;
+  width: 25%;
+  background-color: antiquewhite;
+}
+
+.flexbox:hover {
+  -ms-transform: scale(1.075);
+  -webkit-transform: scale(1.075);
+  transform: scale(1.075);
+  cursor: pointer;
+}
+
+/* ------- Mig selv ------- */
+
+.billede_mig {
+  width: 20%;
+  float: left;
+  margin-left: 70px;
+}
+
+.billede_mig2 {
+  width: 20%;
+  float: left;
+  margin-left: -30px;
+  margin-top: 90px;
+}
+
+.text_mig {
+  margin-right: 40px;
+  margin-top: 110px;
+  margin-left: 600px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+/* --------- Billeder på Mig siden -------- */
+.overskirft_mig {
+  margin-top: 70px;
+}
+
+.grid-container1 {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  grid-template-areas: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 6px 6px;
+  margin-top: 40px;
+  grid-template-areas:
+    "celle1 celle2 celle3"
+    ". . ."
+    ". . .";
+}
+
+.celle_1 {
+  margin: 25px;
+  margin-bottom: 10px;
+  grid-area: celle1;
+}
+
+.celle_2 {
+  margin: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  grid-area: celle2;
+}
+
+.celle_3 {
+  margin: 25px;
+  margin-top: 2px;
+  margin-right: 30px;
+  grid-area: celle3;
+}
+
+.guide_link2 {
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #9e866c;
+}
+
+.billede_1 {
+  width: 25%;
+}
+
+.billede_2 {
+  width: 20%;
+  margin-bottom: 5px;
+}
+
+.billede_3 {
+  width: 20%;
+  margin-bottom: 5px;
+}
+
+/* ------- Kontakt ------- */
+
+.overskrift_kontakt {
+  margin-top: 70px;
+}
+
+.kontakt_mig {
+  border: 4px solid antiquewhite;
+  padding: 20px;
+  margin-right: 670px;
+  margin-left: 70px;
+  margin-top: 50px;
+}
+
+.mail {
+  width: 100px;
+}
+
+.tlf {
+  width: 100px;
+}
+
+.cv {
+  padding: 10px;
+  background-color: antiquewhite;
+  margin-right: 800px;
+  margin-left: 200px;
+  margin-top: 80px;
+  color: black;
+}
+
+.video {
+  float: right;
+  margin-right: 70px;
+  margin-top: -400px;
+  width: 540px;
+  height: 400px;
+}
+/* ----- Page footer ----- */
+
+.page_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  border-top: 1px solid #9e866c;
+  padding-top: 20px;
+  padding: 40px;
+  color: black;
+  font-family: "PT Serif", serif;
+  background-color: white;
+}
+
+.footer_card_heading {
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.address {
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.footer_card:first-child .footer_card_heading {
+  margin-bottom: 5px;
+}
+
+.some_image {
+  width: 40px;
+  margin: 10px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  
+  .cta_style {
+    background-color: lightgray;
+    color: white;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .mobileiconlabel,
+  .mobileicon {
+    margin-right: 10px;
+    color: black;
+  }
+
+  .logo {
+    margin-top: -2px;
+    margin-left: -20px;
+  }
+
+  .forside_billede {
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 10%;
+  }
+
+  .tekst_billede {
+    margin-left: -10px;
+    margin-top: 50px;
+    width: 440px;
+  }
+
+  .overskrift_forside {
+    margin-top: 450px;
+    margin-left: 10px;
+    margin-right: 100px;
+  }
+
+  .forside_tekst {
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 110px;
+  }
+
+  .button_læsmere {
+    padding: 15px;
+    font-size: 18px;
+    margin-right: 100px;
+  }
+
+  .parallax {
+    background: url(../img/parmobil.png);
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .laptop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 100%;
+  }
+
+
+  /* ----- Overskrift portfolio ------ */
+
+.overskrift_portfolio {
+  margin-top: 70px;
+}
+
+/* Gridbox Portfolio */
+.image_portfolio {
+  margin-top: 10px;  
+}
+
+.container {
+  position: relative;
+  width: 450px;
+  margin-top: 80px;
+  margin-left: -110px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.5;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #9e866c;
+  color: white;
+  font-size: 16px;
+  padding: 15px 5px;
+  margin-left: 100px;
+  margin-right: 10px;
+  font-size: 1.6rem;
+}
+
+.billeder_bike {
+  margin-top: 200px;
+  background-color: white;
+}
+
+.image_bike {
+  width: 350px;
+  margin-left: -40px;
+  margin-right: 20px;
+  margin-top: 25px;
+  font-size: 21px;
+  text-align: center;
+}
+
+.tekst_bike {
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 10px;
+}
+
+/*------ Billeder af projekter --------*/
+.image_1 {
+  margin-top: 20px;
+  opacity: 1;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  margin-left: -15px;
+  width: 350px;
+  height: 203px;
+}
+
+.image_1:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_2 {
+  height: 203px;
+  margin-left: -15px;
+  width: 350px;
+}
+
+.image_3 {
+  height: 203px;
+  margin-left: -15px;
+  width: 350px;
+}
+
+.image_4 {
+  height: 203px;
+  margin-left: -15px;
+  width: 350px;
+}
+
+.image_2:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_3:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image_4:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/* -------- CLC ----- */ 
+.tekst_clc {
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 15px;
+}
+
+.overskrift_clc {
+  color: black;
+  margin-top: 30px;
+}
+
+.billeder_clc {
+  background-color: white;
+  padding: 20px;
+}
+
+.image_clc1 {
+  margin-top: 10px;
+  width: 350px;
+  margin-left: -35px;
+}
+
+.image_clc2 {
+  margin-top: 30px;
+  width: 350px;
+  margin-left: -35px;
+}
+
+.image_clc3 {
+  margin-top: 30px;
+  width: 350px;
+  margin-left: -35px;
+}
+
+.image__1 {
+  width: 350px;
+  margin-left: -18px;
+}
+
+.image__2 {
+  width: 350px;
+  margin-left: -18px;
+}
+
+.image__3 {
+  width: 350px;
+  height: 250px;
+  margin-left: -18px;
+}
+
+.image__4 {
+  width: 350px;
+  margin-left: -18px;
+  height: 200px;
+}
+
+.image__1:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image__2:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image__3:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.image__4:hover {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+/* ------ Løgismose ------ */
+
+.tekst_chips {
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 95px;
+  margin-right: 10px;
+  color: black;
+}
+
+.billeder_chips {
+  background-color: white;
+  padding: 20px;
+}
+
+.image_chips {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+/*------- Tekstbokse Portfolio -------*/
+
+.outer_flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  margin-top: 50px;
+}
+
+.flexbox_heading {
+  text-align: center;
+  color: #333333;
+  font-family: "PT Serif", serif;
+  font-size: 1.5rem;
+  line-height: 1.85rem;
+}
+
+.section_text {
+  color: #333333;
+  font-family: "PT Serif", serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: -10px;
+}
+
+.flexbox {
+  border: 2.5px solid #c6bda8;
+  margin: 5px;
+  border-radius: 20px;
+  margin-left: 50px;
+  margin-right: 40px;
+  transition: transform 0.5s;
+  width: 80%;
+  background-color: antiquewhite;
+}
+
+.flexbox:hover {
+  -ms-transform: scale(1.075);
+  -webkit-transform: scale(1.075);
+  transform: scale(1.075);
+  cursor: pointer;
+}
+
+/* ------- Mig selv ------- */
+
+.billede_mig {
+  width: 60%;
+  float: left;
+  margin-left: 25px;
+}
+
+.billede_mig2 {
+  width: 60%;
+  float: left;
+  margin-left: 130px;
+  margin-top: -90px;
+}
+
+.text_mig {
+  margin-right: 40px;
+  margin-top: 570px;
+  margin-left: 40px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+/* --------- Billeder på Mig siden -------- */
+.overskirft_mig {
+  margin-top: 70px;
+}
+
+.grid-container1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  grid-template-areas: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 6px 6px;
+  margin-top: 40px;
+  grid-template-areas:
+    "celle1 celle2 celle3"
+    ". . ."
+    ". . .";
+}
+
+.celle_1 {
+  margin: 25px;
+  margin-bottom: 10px;
+  grid-area: celle1;
+}
+
+.celle_2 {
+  margin: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  grid-area: celle2;
+}
+
+.celle_3 {
+  margin: 25px;
+  margin-top: 2px;
+  margin-right: 30px;
+  grid-area: celle3;
+}
+
+.guide_link2 {
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #9e866c;
+}
+
+.billede_1 {
+  width: 25%;
+}
+
+.billede_2 {
+  width: 20%;
+  margin-bottom: 5px;
+}
+
+.billede_3 {
+  width: 20%;
+  margin-bottom: 5px;
+}
+/* ------- Kontakt ------- */
+
+.overskrift_kontakt {
+  margin-top: 70px;
+}
+
+.kontakt_mig {
+  border: 4px solid antiquewhite;
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 250px;
+}
+
+.mail {
+  width: 80px;
+}
+
+.tlf {
+  width: 80px;
+}
+
+.cv {
+  padding: 10px;
+  background-color: antiquewhite;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 40px;
+  color: black;
+}
+
+.video {
+  margin-right: 20px;
+  margin-top: -490px;
+  width: 340px;
+  height: 200px;
+}
+
+/* ----- Page footer ----- */
+
+.page_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  border-top: 1px solid black;
+  padding: 40px;
+  color: black;
+  font-family: "PT Serif", serif;
+  background-color: white;
+  width: 100%;
+}
+
+.footer_card {
+  margin: 10px;
+}
+
+.footer_card_heading {
+  margin-bottom: 5px;
+  font-size: 10px;
+  text-align: center;
+  margin-top: -10px;
+  margin-right: 20px;
+}
+
+.footer_card_heading1 {
+  margin-bottom: 5px;
+  font-size: 10px;
+  text-align: center;
+  margin-top: -10px;
+  margin-right: 90px;
+  margin-left: -80px;
+}
+
+.address {
+  margin-left: -180px;
+  margin-top: 10px;
+}
+
+.footer_card:first-child .footer_card_heading {
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+.some_image {
+  width: 23px;
+  margin: 20px;
+  margin-left: -10px;
+}
+
+.mobil {
+  display: none;
+}
+}
+
+@media only screen and (min-width: 768px) {
+
+  .mobileiconlabel,
+  .mobileicon {
+    display: none;
+  }
+
+  .tabbar {
+    justify-content: flex-end;
+  }
+
+  .menuitems__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: initial;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .menuitem {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background: none;
+    margin-left: 2em;
+    padding: 10px;
+  }
+
+  .menuitem:hover {
+    background-color: antiquewhite;
+    color: white;
+    border-radius: 5px;
+  } 
+
+  .outer_flexbox {
+    flex-direction: row;
+  }
+
+  .header_flexbox {
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+  }
+}
+
